@@ -9,6 +9,7 @@ namespace dcit318_assignment1_10964587
             Console.WriteLine("Select the application to run:");
             Console.WriteLine("1. Grade Calculator");
             Console.WriteLine("2. Ticket Price Calculator");
+            Console.WriteLine("3. Triangle Type Identifier");
             Console.WriteLine("Enter the number of your choice: ");
             int choice = int.Parse(Console.ReadLine());
 
@@ -19,6 +20,9 @@ namespace dcit318_assignment1_10964587
                     break;
                 case 2:
                     RunTicketPriceCalculator();
+                    break;
+                case 3:
+                    RunTriangleTypeIdentifier();
                     break;
                 default:
                     Console.WriteLine("Invalid choice. Please run the program again and select a valid option.");
@@ -63,6 +67,29 @@ namespace dcit318_assignment1_10964587
             int age = int.Parse(Console.ReadLine());
             int ticketPrice = (age <= 12 || age >= 65) ? 7 : 10;
             Console.WriteLine($"Ticket Price: GHC{ticketPrice}");
+        }
+
+        static void RunTriangleTypeIdentifier()
+        {
+            Console.Write("Enter side 1: ");
+            double side1 = double.Parse(Console.ReadLine());
+            Console.Write("Enter side 2: ");
+            double side2 = double.Parse(Console.ReadLine());
+            Console.Write("Enter side 3: ");
+            double side3 = double.Parse(Console.ReadLine());
+
+            if (side1 == side2 && side2 == side3)
+            {
+                Console.WriteLine("The triangle is Equilateral.");
+            }
+            else if (side1 == side2 || side2 == side3 || side1 == side3)
+            {
+                Console.WriteLine("The triangle is Isosceles.");
+            }
+            else
+            {
+                Console.WriteLine("The triangle is Scalene.");
+            }
         }
     }
 }
